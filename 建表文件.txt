@@ -1,0 +1,18 @@
+保存城市信息的表
+CREATE TABLE `city` (
+  `id` int NOT NULL,
+  `cityname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `longitude` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `latitude` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+保存天气信息
+CREATE TABLE `weather` (
+  `id` int DEFAULT NULL,
+  `cityname` varchar(255) COLLATE utf8mb4_da_0900_ai_ci DEFAULT NULL,
+  `Data` varchar(255) COLLATE utf8mb4_da_0900_ai_ci DEFAULT NULL,
+  `tempMax` varchar(255) COLLATE utf8mb4_da_0900_ai_ci DEFAULT NULL,
+  `tempMin` varchar(255) COLLATE utf8mb4_da_0900_ai_ci DEFAULT NULL,
+  `textDay` varchar(255) COLLATE utf8mb4_da_0900_ai_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_da_0900_ai_ci

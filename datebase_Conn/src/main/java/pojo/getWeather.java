@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.zip.GZIPInputStream;
 public class getWeather {
-    static int id=0;
+    static int id=1;
     public static void main(String[] args) throws IOException {
         JSONObject jsonObject1,jsonObject2,jsonObject3;//处理JSON字符串中的JSON对象
         JSONArray jsonArray1;//处理json字符串中的json数组
@@ -29,10 +29,12 @@ public class getWeather {
             weather weather=getCityWeather(jsonArray1,"beijing",id,i);
             weather_CRUD weather_crud=new weather_CRUD();
             List<weather> weatherList=weather_crud.findById(id);
-            if (weatherList.isEmpty()!=false){
+            if (weatherList.isEmpty()!=true){
                 weather_crud.updateWeather(weather);
+                System.out.println("change success");
             }else {
                 weather_crud.saveWeather(weather);
+                System.out.println("Success");
             }
             id++;
         }
@@ -40,10 +42,12 @@ public class getWeather {
             weather weather=getCityWeather(jsonArray2,"shanghai",id,i);
             weather_CRUD weather_crud=new weather_CRUD();
             List<weather> weatherList=weather_crud.findById(id);
-            if (weatherList.isEmpty()!=false){
+            if (weatherList.isEmpty()!=true){
                 weather_crud.updateWeather(weather);
+                System.out.println("change success");
             }else {
                 weather_crud.saveWeather(weather);
+                System.out.println("Success");
             }
             id++;
         }
@@ -51,10 +55,12 @@ public class getWeather {
             weather weather=getCityWeather(jsonArray3,"fuzhou",id,i);
             weather_CRUD weather_crud=new weather_CRUD();
             List<weather> weatherList=weather_crud.findById(id);
-            if (weatherList.isEmpty()!=false){
+            if (weatherList.isEmpty()!=true){
                 weather_crud.updateWeather(weather);
+                System.out.println("change success");
             }else {
                 weather_crud.saveWeather(weather);
+                System.out.println("Success");
             }
             id++;
         }
